@@ -3,6 +3,7 @@ import org.antlr.v4.runtime.CharStreams
 import org.antlr.v4.runtime.CommonTokenStream
 import org.example.btor2.frontend.dsl.gen.Btor2Lexer
 import org.example.btor2.frontend.dsl.gen.Btor2Parser
+import visitors.Btor2Visitor
 
 fun main(args: Array<String>) {
     val visitor = Btor2Visitor()
@@ -11,13 +12,13 @@ fun main(args: Array<String>) {
         2 zero 1
         3 state 1
         4 init 1 3 2    
-5 one 1
-6 add 1 3 5
-7 next 1 3 6
-8 ones 1
-9 sort bitvec 1
-10 eq 9 3 8
-11 bad 10
+        5 one 1
+        6 add 1 3 5
+        7 next 1 3 6
+        8 ones 1
+        9 sort bitvec 1
+        10 eq 9 3 8
+        11 bad 10
     """.trimIndent()
 
     val input = CharStreams.fromString(c)
