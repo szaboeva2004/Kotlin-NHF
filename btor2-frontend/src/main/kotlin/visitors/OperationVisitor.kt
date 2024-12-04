@@ -1,0 +1,4 @@
+package visitors
+
+class OperationVisitor {
+}
