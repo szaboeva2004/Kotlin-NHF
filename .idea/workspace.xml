@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="Okay got it">
       <changelist_data name="Szabó Éva Mária" email="szaboevamaria@edu.bme.hu" date="1733332756000" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/antlr/Btor2.g4" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/antlr/Btor2.g4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Model.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Model.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/Btor2Visitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/Btor2Visitor.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +52,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/repos/Kotlin-NHF/btor2-frontend/build.gradle.kts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -61,6 +66,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="btor2-frontend.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,7 +87,8 @@
       <workItem from="1733408833934" duration="7692000" />
       <workItem from="1733451318166" duration="292000" />
       <workItem from="1733451874600" duration="186000" />
-      <workItem from="1733452101025" duration="772000" />
+      <workItem from="1733452101025" duration="3786000" />
+      <workItem from="1733479834204" duration="1188000" />
     </task>
     <task id="LOCAL-00001" summary="Valamiért nem fut a main">
       <option name="closed" value="true" />

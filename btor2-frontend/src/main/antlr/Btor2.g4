@@ -10,15 +10,13 @@ PLUS: '+';
 MINUS: '-';
 UNARYOP: 'not'
     | 'inc' | 'dec' | 'neg';
-BINOP: 'and' | 'nand' | 'nor' | 'or' | 'xor' | 'iff' | 'implies'
+BINOP: 'and' | 'nand' | 'nor' | 'or' | 'xor'
     | 'eq' | 'neq'
     | 'slt' | 'sle' | 'sgt' | 'sgte'
     | 'ult' | 'ule' | 'ugt' | 'ugte'
-    | 'concat' | 'add' | 'mul'
+    | 'add' | 'mul'
     | 'udiv' | 'urem'
-    | 'sdiv' | 'srem' | 'smod'
-    | 'saddo' | 'sdivo' | 'smulo' | 'ssubo'
-    | 'uaddo' | 'umulo' | 'usubo' ;
+    | 'sdiv' | 'srem' | 'smod';
 SYMBOL: ~[ \r\n]+;
 COMMENT: ';' ~[\r\n]+;
 
