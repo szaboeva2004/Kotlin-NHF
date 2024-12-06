@@ -11,10 +11,3 @@ object Btor2Circuit {
     var nodes: MutableList<Btor2Node> = mutableListOf()
     var sorts: MutableList<Btor2Sort> = mutableListOf()
 }
-
-
-// data class Book (
-//     override var id: Long = 0,
-//     override var location: String = "",
-//     var isbn: String
-// ) : Resource()

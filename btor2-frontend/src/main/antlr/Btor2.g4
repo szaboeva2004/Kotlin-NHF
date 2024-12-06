@@ -3,14 +3,13 @@
 grammar Btor2;
 
 // Lexer rules
+// Csak az aritmetikai és bit operátorokat tartom meg
 WS: [ ]+ -> skip;
 NUM: [0-9]+;
 PLUS: '+';
 MINUS: '-';
 UNARYOP: 'not'
-         | 'inc' | 'dec' | 'neg'
-         | 'redand' | 'redor' | 'redxor';
-TERNARYOP: 'ite' | 'write';
+    | 'inc' | 'dec' | 'neg';
 BINOP: 'and' | 'nand' | 'nor' | 'or' | 'xor' | 'iff' | 'implies'
     | 'eq' | 'neq'
     | 'slt' | 'sle' | 'sgt' | 'sgte'
@@ -19,8 +18,7 @@ BINOP: 'and' | 'nand' | 'nor' | 'or' | 'xor' | 'iff' | 'implies'
     | 'udiv' | 'urem'
     | 'sdiv' | 'srem' | 'smod'
     | 'saddo' | 'sdivo' | 'smulo' | 'ssubo'
-    | 'uaddo' | 'umulo' | 'usubo'
-    | 'rol' | 'ror' | 'sll' | 'sra' | 'srl' | 'read';
+    | 'uaddo' | 'umulo' | 'usubo' ;
 SYMBOL: ~[ \r\n]+;
 COMMENT: ';' ~[\r\n]+;
 
@@ -43,12 +41,11 @@ opidx: ext | slice;
 
 ext: id=nid ('uext'|'sext') sid opd1=nid w=NUM;
 slice: id=nid 'slice' sid opd1=nid u=NUM l=NUM;
-
-op: binop | unop | terop;
+// Terop kivéve
+op: binop | unop ;
 
 binop: id=nid BINOP sid opd1=nid opd2=nid;
 unop: id=nid UNARYOP sid opd1=nid;
-terop: id=nid TERNARYOP sid opd1=nid opd2=nid opd3=nid;
 
 input: id=nid ('input') sid;
 
