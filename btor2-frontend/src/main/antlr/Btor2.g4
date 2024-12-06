@@ -52,7 +52,7 @@ next: id=nid 'next' sid param1=nid param2=nid;
 
 state: id=nid 'state' sid;
 
-property: id=nid property_type=('bad' | 'constraint' | 'fair' | 'output' | 'justice' ) param=nid;
+property: id=nid property_type= 'bad' param=nid;
 
 // array_sort: id=sid 'sort array' sid1=sid sid2=sid;
 bitvec_sort: id=sid 'sort bitvec' width=NUM;

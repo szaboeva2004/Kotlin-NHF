@@ -1,5 +1,6 @@
 package visitors
 
+import models.Btor2BitvecSort
 import models.Btor2Sort
 import org.example.btor2.frontend.dsl.gen.Btor2BaseVisitor
 import org.example.btor2.frontend.dsl.gen.Btor2Parser
@@ -13,6 +14,6 @@ class SortVisitor : Btor2BaseVisitor<Btor2Sort>() {
 
     override fun visitBitvec_sort(ctx: Bitvec_sortContext): Btor2Sort {
         print("Bitvec sort visited: ")
-        return Btor2Sort(ctx.id.NUM().text.toUInt(), ctx.width.text.toUInt())
+        return Btor2BitvecSort(ctx.id.NUM().text.toUInt(), ctx.width.text.toUInt())
     }
 }

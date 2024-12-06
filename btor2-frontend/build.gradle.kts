@@ -16,6 +16,7 @@ dependencies {
     antlr("org.antlr:antlr4:4.9.2")
     implementation("org.antlr:antlr4-runtime:4.9.2")
     implementation("hu.bme.mit.theta:theta-xcfa:6.8.1")
+    implementation("hu.bme.mit.theta:theta-core:6.8.1")
 }
 
 tasks.test {
