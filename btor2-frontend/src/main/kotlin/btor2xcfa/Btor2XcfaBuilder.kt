@@ -17,7 +17,6 @@ object Btor2XcfaBuilder{
 
 }
 
-
 class Btor2Pass() : ProcedurePassManager() {
     // No optimization for now c:
 }
