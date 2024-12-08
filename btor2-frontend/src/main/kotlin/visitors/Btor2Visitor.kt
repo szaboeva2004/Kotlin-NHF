@@ -3,7 +3,6 @@ package visitors
 import models.Btor2Circuit
 import org.example.btor2.frontend.dsl.gen.Btor2BaseVisitor
 import org.example.btor2.frontend.dsl.gen.Btor2Parser
-// TODO Bto2Circuit-eket visszaadni
 class Btor2Visitor : Btor2BaseVisitor<Btor2Circuit>(){
     val sortVisitor = SortVisitor()
 
@@ -22,11 +21,6 @@ class Btor2Visitor : Btor2BaseVisitor<Btor2Circuit>(){
         return Btor2Circuit
     }
 
-    //override fun visitComment(ctx: Btor2Parser.CommentContext?): String {
-    //    return "Comment visited" + ctx?.getText()
-    //}
-
-// TODO Modell típusok, belegyűjtjük a Btor2 megfeleleő listáiba
     override fun visitSort(ctx: Btor2Parser.SortContext?): Btor2Circuit {
         val result = sortVisitor.visit(ctx)
         Btor2Circuit.sorts.add(result)

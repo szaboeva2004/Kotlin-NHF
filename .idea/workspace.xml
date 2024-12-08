@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="Cfa folyamatban">
-      <change afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Operation.kt" afterDir="false" />
+    <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="Models are done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/btor2xcfa/Btor2XcfaBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/btor2xcfa/Btor2XcfaBuilder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Model.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Model.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Const.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Const.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2States.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2States.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/Btor2Visitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/Btor2Visitor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/ConstantVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/ConstantVisitor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/IdVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/IdVisitor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/OperationVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/OperationVisitor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/SortVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/SortVisitor.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +103,7 @@
       <workItem from="1733452101025" duration="3786000" />
       <workItem from="1733479834204" duration="1583000" />
       <workItem from="1733484780474" duration="4278000" />
-      <workItem from="1733582346567" duration="3656000" />
+      <workItem from="1733582346567" duration="11106000" />
     </task>
     <task id="LOCAL-00001" summary="Valamiért nem fut a main">
       <option name="closed" value="true" />
@@ -125,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733489431246</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Models are done">
+      <option name="closed" value="true" />
+      <created>1733605148617</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1733605148617</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +159,7 @@
     <MESSAGE value="Okay got it" />
     <MESSAGE value="Leszűkítve Btor2, modellek folyamatban" />
     <MESSAGE value="Cfa folyamatban" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cfa folyamatban" />
+    <MESSAGE value="Models are done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Models are done" />
   </component>
 </project>

@@ -15,7 +15,27 @@ data class Btor2State(override val nid: UInt, override val sort: Btor2Sort) : Bt
     }
 }
 data class Btor2Init(override val nid: UInt, override val sort: Btor2Sort, val state: Btor2State, val value: Btor2Const) : Btor2Node(nid, sort)
+{
+    val declsVar = Decls.Var("init_$nid", BvExprs.BvType(sort.width.toInt()))
+
+    override fun getVar(): VarDecl<*>? {
+        return declsVar
+    }
+}
 
 data class Btor2Next(override val nid: UInt, override val sort: Btor2Sort, val state: Btor2State, val value: Btor2Node) : Btor2Node(nid, sort)
+{
+    val declsVar = Decls.Var("next_$nid", BvExprs.BvType(sort.width.toInt()))
 
+    override fun getVar(): VarDecl<*>? {
+        return declsVar
+    }
+}
 data class Btor2Bad(override val nid: UInt, override val sort: Btor2Sort, val operand: Btor2Node) : Btor2Node(nid, null)
+{
+    val declsVar = Decls.Var("bad_$nid", BvExprs.BvType(sort.width.toInt()))
+
+    override fun getVar(): VarDecl<*>? {
+        return declsVar
+    }
+}
