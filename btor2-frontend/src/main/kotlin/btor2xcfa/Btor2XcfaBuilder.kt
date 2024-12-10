@@ -6,6 +6,7 @@ import hu.bme.mit.theta.core.type.bvtype.BvType
 import hu.bme.mit.theta.xcfa.model.*
 import hu.bme.mit.theta.xcfa.passes.ProcedurePassManager
 import models.Btor2Circuit
+import models.Btor2Node
 import models.Btor2Operation
 
 object Btor2XcfaBuilder{
@@ -47,7 +48,7 @@ object Btor2XcfaBuilder{
         }
 
         procBuilder.createErrorLoc()
-
+        // Errorkezelése
         val bad = Btor2Circuit.bads.values.first()
         val op = bad.operand as Btor2Operation
         // We will cast for now ¯\_(ツ)_/¯
@@ -55,6 +56,11 @@ object Btor2XcfaBuilder{
         procBuilder.addEdge(XcfaEdge(lastLoc, procBuilder.errorLoc.get(), StmtLabel(op.getStmt(false)),EmptyMetaData))
         val newLoc = XcfaLocation("l${i}", false, false, false, EmptyMetaData)
         procBuilder.addEdge(XcfaEdge(lastLoc, newLoc, StmtLabel(op.getStmt(true)),EmptyMetaData))
+
+        //Circuit folytatása
+        val next = Btor2Circuit.nexts.values.first()
+        val firstLoc = procBuilder.getLocs().elementAt(1)
+        procBuilder.addEdge(XcfaEdge(newLoc, firstLoc, StmtLabel(AssignStmt.of(next.state.getVar(), next.value.getExpr() as Expr<BvType>)),EmptyMetaData))
         return xcfaBuilder.build()
     }
 

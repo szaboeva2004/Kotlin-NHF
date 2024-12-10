@@ -55,6 +55,7 @@ class StateVisitor : Btor2BaseVisitor<Btor2Node>() {
         val param1 = Btor2Circuit.nodes[ctx.param1.NUM().text.toUInt()] as Btor2State
         val param2 = Btor2Circuit.nodes[ctx.param2.NUM().text.toUInt()] as Btor2Node
         val node = Btor2Next(nid, sort, param1, param2)
+        Btor2Circuit.nexts[nid] = node
         Btor2Circuit.nodes[nid] = node
         return node
     }

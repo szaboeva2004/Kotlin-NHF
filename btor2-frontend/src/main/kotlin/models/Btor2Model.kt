@@ -25,6 +25,7 @@ object Btor2Circuit {
     var inits: MutableMap<UInt, Btor2Init> = mutableMapOf()
     var ops: MutableMap<UInt, Btor2Operation> = mutableMapOf()
     var bads : MutableMap<UInt, Btor2Bad> = mutableMapOf()
+    var nexts: MutableMap<UInt, Btor2Next> = mutableMapOf()
 }
 
 // sortID lookup in Btor2Sort
