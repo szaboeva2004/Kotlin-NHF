@@ -62,6 +62,7 @@ class StateVisitor : Btor2BaseVisitor<Btor2Node>() {
     override fun visitProperty(ctx: Btor2Parser.PropertyContext): Btor2Node {
         val nid = idVisitor.visit(ctx.id)
         val node = Btor2Bad(nid, null, Btor2Circuit.nodes[ctx.param.NUM().text.toUInt()] as Btor2Node)
+        Btor2Circuit.bads[nid] = node
         Btor2Circuit.nodes[nid] = node
         return node
     }

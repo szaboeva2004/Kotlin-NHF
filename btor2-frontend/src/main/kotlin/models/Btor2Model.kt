@@ -1,15 +1,14 @@
 package models
 
-import hu.bme.mit.theta.core.decl.Decls.Var
 import hu.bme.mit.theta.core.decl.VarDecl
-import hu.bme.mit.theta.core.type.bvtype.BvExprs.BvType
-import visitors.Btor2Visitor
+import hu.bme.mit.theta.core.type.Expr
 
 public interface Btor2NodeVisitor<R, P> {
     fun visit(node: Btor2UnaryOperation, param: P) : R
     fun visit(node: Btor2BinaryOperation, param: P) : R
     fun visit(node: Btor2SliceOperation, param: P) : R
     fun visit(node: Btor2ExtOperation, param: P) : R
+    fun visit(node: Btor2Comparison, param: P) : R
     fun visit(node: Btor2Const, param: P) : R
     fun visit(node: Btor2BitvecSort, param: P) : R
     fun visit(node: Btor2Input, param: P) : R
@@ -24,6 +23,8 @@ object Btor2Circuit {
     var nodes: MutableMap<UInt, Btor2Node> = mutableMapOf()
     var sorts: MutableMap<UInt, Btor2Sort> = mutableMapOf()
     var inits: MutableMap<UInt, Btor2Init> = mutableMapOf()
+    var ops: MutableMap<UInt, Btor2Operation> = mutableMapOf()
+    var bads : MutableMap<UInt, Btor2Bad> = mutableMapOf()
 }
 
 // sortID lookup in Btor2Sort
@@ -36,6 +37,8 @@ abstract class Btor2Node(id: UInt, btor2Sort: Btor2Sort? = null) {
     }
 
     abstract fun <R, P> accept(visitor: Btor2NodeVisitor<R, P>, param : P): R
+    abstract fun getExpr(): Expr<*>
+
 }
 
 abstract class Btor2Sort(sid: UInt, width: UInt) {

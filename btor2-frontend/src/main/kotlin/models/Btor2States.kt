@@ -2,6 +2,8 @@ package models
 
 import hu.bme.mit.theta.core.decl.Decls
 import hu.bme.mit.theta.core.decl.VarDecl
+import hu.bme.mit.theta.core.type.Expr
+import hu.bme.mit.theta.core.type.anytype.RefExpr
 import hu.bme.mit.theta.core.type.bvtype.BvExprs
 import hu.bme.mit.theta.core.type.bvtype.BvType
 
@@ -12,6 +14,10 @@ data class Btor2Input(override val nid: UInt, override val sort: Btor2Sort) : Bt
 
     override fun getVar(): VarDecl<*>? {
         return value
+    }
+
+    override fun getExpr(): Expr<*> {
+        TODO("Not yet implemented")
     }
 
     override fun <R, P> accept(visitor: Btor2NodeVisitor<R, P>, param : P): R {
@@ -26,6 +32,10 @@ data class Btor2State(override val nid: UInt, override val sort: Btor2Sort) : Bt
         return value
     }
 
+    override fun getExpr(): Expr<*> {
+        return RefExpr.of(value)
+    }
+
     override fun <R, P> accept(visitor: Btor2NodeVisitor<R, P>, param : P): R {
         return visitor.visit(this, param)
     }
@@ -36,6 +46,10 @@ data class Btor2Init(override val nid: UInt, override val sort: Btor2Sort, val s
 
     override fun getVar(): VarDecl<*>? {
         return declsVar
+    }
+
+    override fun getExpr(): Expr<*> {
+        TODO("Not yet implemented")
     }
 
     override fun <R, P> accept(visitor: Btor2NodeVisitor<R, P>, param : P): R {
@@ -51,6 +65,10 @@ data class Btor2Next(override val nid: UInt, override val sort: Btor2Sort, val s
         return declsVar
     }
 
+    override fun getExpr(): Expr<*> {
+        TODO("Not yet implemented")
+    }
+
     override fun <R, P> accept(visitor: Btor2NodeVisitor<R, P>, param : P): R {
         return visitor.visit(this, param)
     }
@@ -60,6 +78,11 @@ data class Btor2Bad(override val nid: UInt, override val sort: Btor2Sort?, val o
     override fun getVar(): VarDecl<*>? {
         return null
     }
+
+    override fun getExpr(): Expr<*> {
+        TODO()
+    }
+
     override fun <R, P> accept(visitor: Btor2NodeVisitor<R, P>, param : P): R {
         return visitor.visit(this, param)
     }

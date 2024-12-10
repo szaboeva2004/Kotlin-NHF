@@ -1,4 +1,5 @@
 import btor2xcfa.Btor2XcfaBuilder
+import hu.bme.mit.theta.xcfa.model.toDot
 import models.Btor2Circuit
 import org.antlr.v4.runtime.BailErrorStrategy
 import org.antlr.v4.runtime.CharStreams
@@ -6,6 +7,7 @@ import org.antlr.v4.runtime.CommonTokenStream
 import org.example.btor2.frontend.dsl.gen.Btor2Lexer
 import org.example.btor2.frontend.dsl.gen.Btor2Parser
 import visitors.Btor2Visitor
+import java.io.File
 
 fun main() {
     val visitor = Btor2Visitor()
@@ -32,5 +34,8 @@ fun main() {
 
     context.accept(visitor)
 
-    Btor2XcfaBuilder.btor2xcfa(Btor2Circuit)
+    val xcfa = Btor2XcfaBuilder.btor2xcfa(Btor2Circuit)
+
+    val str = xcfa.toDot()
+    File("output.dot").writeText(str)
 }

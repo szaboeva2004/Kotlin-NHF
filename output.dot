@@ -1,0 +1,16 @@
+digraph G {
+label="Btor2XCFA";
+subgraph cluster_0 {
+label="main";
+main_init[];
+l1[];
+l2[];
+main_error[];
+l3[];
+main_init -> l1 [label="(assign state_3 #b000) "];
+l1 -> l2 [label="(assign binary_6 (bvadd state_3 #b001)) "];
+l2 -> main_error [label="(assume (= state_3 #b111)) "];
+l2 -> l3 [label="(assume (not (= state_3 #b111))) "];
+
+}
+}

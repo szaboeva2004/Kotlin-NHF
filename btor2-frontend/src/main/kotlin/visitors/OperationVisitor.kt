@@ -23,6 +23,7 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
         check(sort.width == (opd.sort as Btor2BitvecSort).width + w)
         val node =  Btor2ExtOperation(nid, sort, opd, w)
         Btor2Circuit.nodes[nid] = node
+        Btor2Circuit.ops[nid] = node
         return node
     }
 
@@ -37,6 +38,7 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
 
         val node =  Btor2SliceOperation(nid, sort, opd, u, l)
         Btor2Circuit.nodes[nid] = node
+        Btor2Circuit.ops[nid] = node
         return node
     }
 
@@ -54,16 +56,16 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
             "nor" -> Btor2BinaryOperator.NOR
             "or" -> Btor2BinaryOperator.OR
             "xor" -> Btor2BinaryOperator.XOR
-            "eq" -> Btor2BinaryOperator.EQ
-            "neq" -> Btor2BinaryOperator.NEQ
-            "slt" -> Btor2BinaryOperator.SLT
-            "sle" -> Btor2BinaryOperator.SLE
-            "sgt" -> Btor2BinaryOperator.SGT
-            "sgte" -> Btor2BinaryOperator.SGTE
-            "ult" -> Btor2BinaryOperator.ULT
-            "ule" -> Btor2BinaryOperator.ULE
-            "ugt" -> Btor2BinaryOperator.UGT
-            "ugte" -> Btor2BinaryOperator.UGTE
+            "eq" -> Btor2ComparisonOperator.EQ
+            "neq" -> Btor2ComparisonOperator.NEQ
+            "slt" -> Btor2ComparisonOperator.SLT
+            "sle" -> Btor2ComparisonOperator.SLE
+            "sgt" -> Btor2ComparisonOperator.SGT
+            "sgte" -> Btor2ComparisonOperator.SGTE
+            "ult" -> Btor2ComparisonOperator.ULT
+            "ule" -> Btor2ComparisonOperator.ULE
+            "ugt" -> Btor2ComparisonOperator.UGT
+            "ugte" -> Btor2ComparisonOperator.UGTE
             "add" -> Btor2BinaryOperator.ADD
             "mul" -> Btor2BinaryOperator.MUL
             "udiv" -> Btor2BinaryOperator.UDIV
@@ -73,10 +75,20 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
             "smod" -> Btor2BinaryOperator.SMOD
             else -> throw RuntimeException("Binary operator unknown")
         }
-
-        var node =  Btor2BinaryOperation(nid, sort, op, opd1, opd2)
-        Btor2Circuit.nodes[nid] = node
-        return node
+        if (op is Btor2ComparisonOperator) {
+            val node =  Btor2Comparison(nid, sort, op, opd1, opd2)
+            Btor2Circuit.nodes[nid] = node
+            return node
+        }
+        else if (op is Btor2BinaryOperator) {
+            val node =  Btor2BinaryOperation(nid, sort, op, opd1, opd2)
+            Btor2Circuit.nodes[nid] = node
+            Btor2Circuit.ops[nid] = node
+            return node
+        }
+        else {
+            throw RuntimeException("Binary operator unknown")
+        }
     }
 
     override fun visitUnop(ctx: Btor2Parser.UnopContext): Btor2Node {
@@ -97,6 +109,7 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
 
         val node =  Btor2UnaryOperation(nid, sort, op, opd)
         Btor2Circuit.nodes[nid] = node
+        Btor2Circuit.ops[nid] = node
         return node
     }
 }

@@ -1,9 +1,12 @@
 package btor2xcfa
 
 import hu.bme.mit.theta.core.stmt.AssignStmt
+import hu.bme.mit.theta.core.type.Expr
+import hu.bme.mit.theta.core.type.bvtype.BvType
 import hu.bme.mit.theta.xcfa.model.*
 import hu.bme.mit.theta.xcfa.passes.ProcedurePassManager
 import models.Btor2Circuit
+import models.Btor2Operation
 
 object Btor2XcfaBuilder{
     fun btor2xcfa(circuit: Btor2Circuit) : XCFA {
@@ -16,27 +19,42 @@ object Btor2XcfaBuilder{
         Btor2Circuit.nodes.forEach() {
             it.value.getVar()?.let { varDecl ->
                 procBuilder.addVar(varDecl)
-                procBuilder.addLoc(XcfaLocation("l${i}", false, false, false, EmptyMetaData))
-                i++
             }
         }
 
         var lastLoc = procBuilder.initLoc
+
         Btor2Circuit.inits.forEach() {
             val loc = XcfaLocation("l${i}", false, false, false, EmptyMetaData)
 
-
             procBuilder.addLoc(loc)
-            AssignStmt.of(it.value.state.getVar(), it.value.value.getExpr())
 
-            var edge = XcfaEdge(lastLoc,loc, XcfaLabel(), EmptyMetaData)
+            val edge = XcfaEdge(lastLoc,loc, StmtLabel(AssignStmt.of(it.value.state.getVar(), it.value.value.getExpr() as Expr<BvType>)), EmptyMetaData)
+            procBuilder.addEdge(edge)
             i++
             lastLoc=loc
         }
 
+        Btor2Circuit.ops.forEach() {
+            val loc = XcfaLocation("l${i}", false, false, false, EmptyMetaData)
 
+            procBuilder.addLoc(loc)
 
+            val edge = XcfaEdge(lastLoc,loc, StmtLabel(it.value.getStmt(false)), EmptyMetaData)
+            procBuilder.addEdge(edge)
+            i++
+            lastLoc=loc
+        }
 
+        procBuilder.createErrorLoc()
+
+        val bad = Btor2Circuit.bads.values.first()
+        val op = bad.operand as Btor2Operation
+        // We will cast for now ¯\_(ツ)_/¯
+
+        procBuilder.addEdge(XcfaEdge(lastLoc, procBuilder.errorLoc.get(), StmtLabel(op.getStmt(false)),EmptyMetaData))
+        val newLoc = XcfaLocation("l${i}", false, false, false, EmptyMetaData)
+        procBuilder.addEdge(XcfaEdge(lastLoc, newLoc, StmtLabel(op.getStmt(true)),EmptyMetaData))
         return xcfaBuilder.build()
     }
 
