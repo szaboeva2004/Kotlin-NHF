@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="Almost done, only NEXT is to be done, Assign Statement">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/btor2xcfa/Btor2XcfaBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/btor2xcfa/Btor2XcfaBuilder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Model.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Model.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/StateVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/StateVisitor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output.dot" beforeDir="false" afterPath="$PROJECT_DIR$/output.dot" afterDir="false" />
-    </list>
+    <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="Done but without README" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +98,7 @@
       <workItem from="1733797230625" duration="4041000" />
       <workItem from="1733834594954" duration="4014000" />
       <workItem from="1733840443917" duration="15076000" />
-      <workItem from="1733863961112" duration="2467000" />
+      <workItem from="1733863961112" duration="3203000" />
     </task>
     <task id="LOCAL-00001" summary="Valamiért nem fut a main">
       <option name="closed" value="true" />
@@ -194,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733855670294</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Done but without README">
+      <option name="closed" value="true" />
+      <created>1733868003611</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733868003611</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +226,8 @@
     <MESSAGE value="XCFA-t elkezdtem" />
     <MESSAGE value="Something big i feel it happening" />
     <MESSAGE value="Almost done, only NEXT is to be done, Assign Statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Almost done, only NEXT is to be done, Assign Statement" />
+    <MESSAGE value="Done but without README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done but without README" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
