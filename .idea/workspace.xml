@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="Visitorok kiegészítve">
-      <change afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/StateVisitor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/btor2xcfa/Btor2XcfaBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/btor2xcfa/Btor2XcfaBuilder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Model.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Model.kt" afterDir="false" />
+    <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="Model, visitorok készen, XCFA van hátra">
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Operation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Operation.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2States.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2States.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/Btor2Visitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/Btor2Visitor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/ConstantVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/ConstantVisitor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/OperationVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/OperationVisitor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/SortVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/SortVisitor.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +99,7 @@
       <workItem from="1733479834204" duration="1583000" />
       <workItem from="1733484780474" duration="4278000" />
       <workItem from="1733582346567" duration="14050000" />
-      <workItem from="1733797230625" duration="2046000" />
+      <workItem from="1733797230625" duration="2918000" />
     </task>
     <task id="LOCAL-00001" summary="Valamiért nem fut a main">
       <option name="closed" value="true" />
@@ -147,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733616555401</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Model, visitorok készen, XCFA van hátra">
+      <option name="closed" value="true" />
+      <created>1733799582305</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733799582305</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +173,7 @@
     <MESSAGE value="Cfa folyamatban" />
     <MESSAGE value="Models are done" />
     <MESSAGE value="Visitorok kiegészítve" />
-    <option name="LAST_COMMIT_MESSAGE" value="Visitorok kiegészítve" />
+    <MESSAGE value="Model, visitorok készen, XCFA van hátra" />
+    <option name="LAST_COMMIT_MESSAGE" value="Model, visitorok készen, XCFA van hátra" />
   </component>
 </project>

@@ -6,7 +6,14 @@ import hu.bme.mit.theta.core.type.bvtype.BvExprs
 
 // Inputs and States
 data class Btor2Input(override val nid: UInt, override val sort: Btor2Sort) : Btor2Node(nid, sort)
+{
+    val value = Decls.Var("input_$nid", BvExprs.BvType(sort.width.toInt()))
 
+    override fun getVar(): VarDecl<*>? {
+        return value
+    }
+
+}
 data class Btor2State(override val nid: UInt, override val sort: Btor2Sort) : Btor2Node(nid, sort) {
     val value = Decls.Var("state_$nid", BvExprs.BvType(sort.width.toInt()))
 
