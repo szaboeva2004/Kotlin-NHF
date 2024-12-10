@@ -1,3 +1,5 @@
+import btor2xcfa.Btor2XcfaBuilder
+import models.Btor2Circuit
 import org.antlr.v4.runtime.BailErrorStrategy
 import org.antlr.v4.runtime.CharStreams
 import org.antlr.v4.runtime.CommonTokenStream
@@ -5,7 +7,7 @@ import org.example.btor2.frontend.dsl.gen.Btor2Lexer
 import org.example.btor2.frontend.dsl.gen.Btor2Parser
 import visitors.Btor2Visitor
 
-fun main(args: Array<String>) {
+fun main() {
     val visitor = Btor2Visitor()
     val c = """
         1 sort bitvec 3
@@ -29,4 +31,6 @@ fun main(args: Array<String>) {
     val context = parser.btor2()
 
     context.accept(visitor)
+
+    Btor2XcfaBuilder.btor2xcfa(Btor2Circuit)
 }

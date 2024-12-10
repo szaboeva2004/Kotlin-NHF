@@ -17,12 +17,12 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
         val sid = idVisitor.visit(ctx.sid())
         val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid] as Btor2BitvecSort
 
-        val opd = nodes[ctx.opd1.text.toInt()] as Btor2Node
+        val opd = nodes[ctx.opd1.text.toUInt()] as Btor2Node
         val w = ctx.w.text.toUInt()
 
         check(sort.width == (opd.sort as Btor2BitvecSort).width + w)
         val node =  Btor2ExtOperation(nid, sort, opd, w)
-        Btor2Circuit.nodes.add(node)
+        Btor2Circuit.nodes[nid] = node
         return node
     }
 
@@ -31,23 +31,22 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
         val sid = idVisitor.visit(ctx.sid())
         val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid] as Btor2BitvecSort
 
-        val opd = nodes[ctx.opd1.text.toInt()] as Btor2Node
+        val opd = nodes[ctx.opd1.text.toUInt()] as Btor2Node
         val u = ctx.u.text.toUInt()
         val l = ctx.l.text.toUInt()
 
         val node =  Btor2SliceOperation(nid, sort, opd, u, l)
-        Btor2Circuit.nodes.add(node)
+        Btor2Circuit.nodes[nid] = node
         return node
     }
 
     override fun visitBinop(ctx: Btor2Parser.BinopContext): Btor2Node {
-        check(ctx.childCount == 3)
         val nid = idVisitor.visit(ctx.id)
         val sid = idVisitor.visit(ctx.sid())
         val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid] as Btor2BitvecSort
 
-        val opd1 = nodes[ctx.opd1.text.toInt()] as Btor2Node
-        val opd2 = nodes[ctx.opd2.text.toInt()] as Btor2Node
+        val opd1 = nodes[ctx.opd1.text.toUInt()] as Btor2Node
+        val opd2 = nodes[ctx.opd2.text.toUInt()] as Btor2Node
 
         val op = when (ctx.BINOP().text) {
             "and" -> Btor2BinaryOperator.AND
@@ -76,7 +75,7 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
         }
 
         var node =  Btor2BinaryOperation(nid, sort, op, opd1, opd2)
-        Btor2Circuit.nodes.add(node)
+        Btor2Circuit.nodes[nid] = node
         return node
     }
 
@@ -93,11 +92,11 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
             else -> throw RuntimeException("Unary operator unknown")
         }
 
-        val opd = nodes[ctx.opd1.text.toInt()] as Btor2Node
+        val opd = nodes[ctx.opd1.text.toUInt()] as Btor2Node
 
 
         val node =  Btor2UnaryOperation(nid, sort, op, opd)
-        Btor2Circuit.nodes.add(node)
+        Btor2Circuit.nodes[nid] = node
         return node
     }
 }

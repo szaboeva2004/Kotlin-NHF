@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="I forgot to push">
+    <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="XCFA-t elkezdtem">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/btor2xcfa/Btor2XcfaBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/btor2xcfa/Btor2XcfaBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Const.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Const.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Model.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Model.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Operation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Operation.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2States.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2States.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/Btor2Visitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/Btor2Visitor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/ConstantVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/ConstantVisitor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/OperationVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/OperationVisitor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/StateVisitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/StateVisitor.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +107,9 @@
       <workItem from="1733479834204" duration="1583000" />
       <workItem from="1733484780474" duration="4278000" />
       <workItem from="1733582346567" duration="14050000" />
-      <workItem from="1733797230625" duration="3731000" />
+      <workItem from="1733797230625" duration="4041000" />
+      <workItem from="1733834594954" duration="4014000" />
+      <workItem from="1733840443917" duration="6759000" />
     </task>
     <task id="LOCAL-00001" summary="Valamiért nem fut a main">
       <option name="closed" value="true" />
@@ -163,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733800275478</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="XCFA-t elkezdtem">
+      <option name="closed" value="true" />
+      <created>1733801154041</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733801154041</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +210,38 @@
     <MESSAGE value="Model, visitorok készen, XCFA van hátra" />
     <MESSAGE value="Model, visitorok most már tényleg készen" />
     <MESSAGE value="I forgot to push" />
-    <option name="LAST_COMMIT_MESSAGE" value="I forgot to push" />
+    <MESSAGE value="XCFA-t elkezdtem" />
+    <option name="LAST_COMMIT_MESSAGE" value="XCFA-t elkezdtem" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/btor2-frontend/src/main/kotlin/Main.kt</url>
+          <line>32</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/ConstantVisitor.kt</url>
+          <line>16</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/ConstantVisitor.kt</url>
+          <line>19</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint type="kotlin-line">
+          <url>file://$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/ConstantVisitor.kt</url>
+          <line>41</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="GradleRunConfiguration">
+        <watch expression="Btor2Circuit.inits" language="JAVA" custom="models.Btor2Circuit" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
