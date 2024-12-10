@@ -3,7 +3,7 @@ package btor2xcfa
 import hu.bme.mit.theta.xcfa.model.*
 import hu.bme.mit.theta.xcfa.passes.ProcedurePassManager
 import models.Btor2Circuit
-/*
+
 object Btor2XcfaBuilder{
     fun btor2xcfa(circuit: Btor2Circuit) : XCFA {
         val xcfaBuilder = XcfaBuilder("Btor2XCFA")
@@ -15,15 +15,14 @@ object Btor2XcfaBuilder{
         // BTor2Circuitbe init lista
         for (node in Btor2Circuit.nodes) {
             node.getVar()?.let { varDecl ->
-                val loc = XcfaLocation("l${node.nid}", false, false, false, EmptyMetaData)
-                val edge = XcfaEdge(procBuilder.initLoc, loc, XcfaAssignment(varDecl, varDecl))
-                procBuilder.addEdge(edge)
+                procBuilder.addVar(varDecl)
             }
         }
+        return TODO("Provide the return value")
     }
 
 }
 
 class Btor2Pass() : ProcedurePassManager() {
     // No optimization for now c:
-}*/
+}

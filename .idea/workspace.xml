@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="Model, visitorok készen, XCFA van hátra">
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Operation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2Operation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2States.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/models/Btor2States.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/Btor2Visitor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/visitors/Btor2Visitor.kt" afterDir="false" />
+    <list default="true" id="e356b7b8-cc7d-48db-9573-3c8709e12eca" name="Changes" comment="I forgot to push">
+      <change beforePath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/btor2xcfa/Btor2XcfaBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/btor2-frontend/src/main/kotlin/btor2xcfa/Btor2XcfaBuilder.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +97,7 @@
       <workItem from="1733479834204" duration="1583000" />
       <workItem from="1733484780474" duration="4278000" />
       <workItem from="1733582346567" duration="14050000" />
-      <workItem from="1733797230625" duration="2918000" />
+      <workItem from="1733797230625" duration="3731000" />
     </task>
     <task id="LOCAL-00001" summary="Valamiért nem fut a main">
       <option name="closed" value="true" />
@@ -149,7 +147,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733799582305</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Model, visitorok most már tényleg készen">
+      <option name="closed" value="true" />
+      <created>1733800239620</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733800239621</updated>
+    </task>
+    <task id="LOCAL-00008" summary="I forgot to push">
+      <option name="closed" value="true" />
+      <created>1733800275478</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733800275478</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +188,8 @@
     <MESSAGE value="Models are done" />
     <MESSAGE value="Visitorok kiegészítve" />
     <MESSAGE value="Model, visitorok készen, XCFA van hátra" />
-    <option name="LAST_COMMIT_MESSAGE" value="Model, visitorok készen, XCFA van hátra" />
+    <MESSAGE value="Model, visitorok most már tényleg készen" />
+    <MESSAGE value="I forgot to push" />
+    <option name="LAST_COMMIT_MESSAGE" value="I forgot to push" />
   </component>
 </project>
