@@ -3,10 +3,12 @@ package models
 import hu.bme.mit.theta.core.decl.Decls.Var
 import hu.bme.mit.theta.core.decl.VarDecl
 import hu.bme.mit.theta.core.type.bvtype.BvExprs.BvType
+import visitors.Btor2Visitor
 
 object Btor2Circuit {
     var nodes: MutableList<Btor2Node> = mutableListOf()
-    var sorts: MutableList<Btor2Sort> = mutableListOf()
+    var sorts: MutableMap<UInt, Btor2Sort> = mutableMapOf()
+    var inits: MutableList<Btor2Node> = mutableListOf()
 }
 
 // sortID lookup in Btor2Sort

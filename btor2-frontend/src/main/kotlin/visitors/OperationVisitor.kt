@@ -15,33 +15,36 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
     override fun visitExt(ctx: Btor2Parser.ExtContext): Btor2Node {
         val nid = idVisitor.visit(ctx.id)
         val sid = idVisitor.visit(ctx.sid())
-        val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid?.toInt()!!] as Btor2BitvecSort
+        val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid] as Btor2BitvecSort
 
         val opd = nodes[ctx.opd1.text.toInt()] as Btor2Node
         val w = ctx.w.text.toUInt()
 
         check(sort.width == (opd.sort as Btor2BitvecSort).width + w)
-
-        return Btor2ExtOperation(nid, sort, opd, w)
+        val node =  Btor2ExtOperation(nid, sort, opd, w)
+        Btor2Circuit.nodes.add(node)
+        return node
     }
 
     override fun visitSlice(ctx: Btor2Parser.SliceContext): Btor2Node {
         val nid = idVisitor.visit(ctx.id)
         val sid = idVisitor.visit(ctx.sid())
-        val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid?.toInt()!!] as Btor2BitvecSort
+        val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid] as Btor2BitvecSort
 
         val opd = nodes[ctx.opd1.text.toInt()] as Btor2Node
         val u = ctx.u.text.toUInt()
         val l = ctx.l.text.toUInt()
 
-        return Btor2SliceOperation(nid, sort, opd, u, l)
+        val node =  Btor2SliceOperation(nid, sort, opd, u, l)
+        Btor2Circuit.nodes.add(node)
+        return node
     }
 
     override fun visitBinop(ctx: Btor2Parser.BinopContext): Btor2Node {
         check(ctx.childCount == 3)
         val nid = idVisitor.visit(ctx.id)
         val sid = idVisitor.visit(ctx.sid())
-        val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid?.toInt()!!] as Btor2BitvecSort
+        val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid] as Btor2BitvecSort
 
         val opd1 = nodes[ctx.opd1.text.toInt()] as Btor2Node
         val opd2 = nodes[ctx.opd2.text.toInt()] as Btor2Node
@@ -80,7 +83,7 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
     override fun visitUnop(ctx: Btor2Parser.UnopContext): Btor2Node {
         val nid = idVisitor.visit(ctx.id)
         val sid = idVisitor.visit(ctx.sid())
-        val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid?.toInt()!!] as Btor2BitvecSort
+        val sort : Btor2BitvecSort = Btor2Circuit.sorts[sid] as Btor2BitvecSort
 
         val op = when (ctx.UNARYOP().text) {
             "not" -> Btor2UnaryOperator.NOT
@@ -93,7 +96,7 @@ class OperationVisitor : Btor2BaseVisitor<Btor2Node>() {
         val opd = nodes[ctx.opd1.text.toInt()] as Btor2Node
 
 
-        var node =  Btor2UnaryOperation(nid, sort, op, opd)
+        val node =  Btor2UnaryOperation(nid, sort, op, opd)
         Btor2Circuit.nodes.add(node)
         return node
     }

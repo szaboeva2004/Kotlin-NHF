@@ -31,11 +31,9 @@ data class Btor2Next(override val nid: UInt, override val sort: Btor2Sort, val s
         return declsVar
     }
 }
-data class Btor2Bad(override val nid: UInt, override val sort: Btor2Sort, val operand: Btor2Node) : Btor2Node(nid, null)
+data class Btor2Bad(override val nid: UInt, override val sort: Btor2Sort?, val operand: Btor2Node) : Btor2Node(nid, null)
 {
-    val declsVar = Decls.Var("bad_$nid", BvExprs.BvType(sort.width.toInt()))
-
     override fun getVar(): VarDecl<*>? {
-        return declsVar
+        return null
     }
 }

@@ -19,7 +19,7 @@ class ConstantVisitor : Btor2BaseVisitor<Btor2Const>() {
     override fun visitFilled_constant(ctx: Btor2Parser.Filled_constantContext): Btor2Const {
         val nid = idVisitor.visit(ctx.id)
         val sid = idVisitor.visit(ctx.sid())
-        val sort : Btor2BitvecSort = sorts[sid?.toInt()!!] as Btor2BitvecSort
+        val sort : Btor2BitvecSort = sorts[sid] as Btor2BitvecSort
         val value = when(ctx.fill.text) {
             "one" -> {
                 check(sort.width == 1u)
@@ -42,14 +42,14 @@ class ConstantVisitor : Btor2BaseVisitor<Btor2Const>() {
     override fun visitConstant(ctx: Btor2Parser.ConstantContext): Btor2Const {
         val nid = idVisitor.visit(ctx.id)
         val sid = idVisitor.visit(ctx.sid())
-        val sort : Btor2BitvecSort = sorts[sid?.toInt()!!] as Btor2BitvecSort
+        val sort : Btor2BitvecSort = sorts[sid] as Btor2BitvecSort
         val value = BigInteger(ctx.bin.text, 2)
         return Btor2Const(nid, value, sort)
     }
     override fun visitConstant_d(ctx: Btor2Parser.Constant_dContext): Btor2Const {
         val nid = idVisitor.visit(ctx.id)
         val sid = idVisitor.visit(ctx.sid())
-        val sort : Btor2BitvecSort = sorts[sid?.toInt()!!] as Btor2BitvecSort
+        val sort : Btor2BitvecSort = sorts[sid] as Btor2BitvecSort
         var value = BigInteger(ctx.dec.text)
         ctx.MINUS()?.let { value = value.multiply(BigInteger("-1")) }
         var node = Btor2Const(nid, value, sort)
@@ -59,7 +59,7 @@ class ConstantVisitor : Btor2BaseVisitor<Btor2Const>() {
     override fun visitConstant_h(ctx: Btor2Parser.Constant_hContext): Btor2Const {
         val nid = idVisitor.visit(ctx.id)
         val sid = idVisitor.visit(ctx.sid())
-        val sort : Btor2BitvecSort = sorts[sid?.toInt()!!] as Btor2BitvecSort
+        val sort : Btor2BitvecSort = sorts[sid] as Btor2BitvecSort
         val value = BigInteger(ctx.hex.text, 16)
         var node = Btor2Const(nid, value, sort)
         Btor2Circuit.nodes.add(node)

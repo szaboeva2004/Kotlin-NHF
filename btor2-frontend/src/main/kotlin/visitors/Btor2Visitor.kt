@@ -4,7 +4,7 @@ import models.Btor2Circuit
 import org.example.btor2.frontend.dsl.gen.Btor2BaseVisitor
 import org.example.btor2.frontend.dsl.gen.Btor2Parser
 class Btor2Visitor : Btor2BaseVisitor<Btor2Circuit>(){
-    val sortVisitor = SortVisitor()
+    private val sortVisitor = SortVisitor()
 
 
     override fun visitBtor2(ctx: Btor2Parser.Btor2Context): Btor2Circuit {
@@ -23,7 +23,7 @@ class Btor2Visitor : Btor2BaseVisitor<Btor2Circuit>(){
 
     override fun visitSort(ctx: Btor2Parser.SortContext?): Btor2Circuit {
         val result = sortVisitor.visit(ctx)
-        Btor2Circuit.sorts.add(result)
+        Btor2Circuit.sorts[result.sid] = result
         return Btor2Circuit
     }
 }
