@@ -27,4 +27,5 @@ class Btor2Visitor : Btor2BaseVisitor<Btor2Circuit>(){
         Btor2Circuit.sorts[result.sid] = result
         return Btor2Circuit
     }
+
 }
